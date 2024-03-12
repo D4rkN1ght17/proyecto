@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenidos al COBACAM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenidos al COBACAM</h1>
+        <p>Por favor, regístrate para comenzar.</p>
+        <form action="bienvenido.html" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" required>
+            <label for="avatar">Elige tu avatar:</label>
+            <select id="avatar" name="avatar" onchange="mostrarAvatar()">
+                <option value="Turtle.png">Turtle</option>
+                <option value="Moth.png">Moth</option>
+                <option value="Ghost.png">Ghost</option>
+                <option value="Skull.png">Skull</option>
+                <option value="Car.png">Car</option>
+                <option value="Penguin.png">Penguin</option>
+                <option value="Dragon.png">Dragon</option>
+            </select>
+            <div id="avatarPreview" class="avatar-preview">
+                <!-- Aquí se mostrará la vista previa del avatar seleccionado -->
+            </div>
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+
+    <script>
+        function mostrarAvatar() {
+            var select = document.getElementById("avatar");
+            var opcionSeleccionada = select.options[select.selectedIndex].value;
+            var avatarPreview = document.getElementById("avatarPreview");
+            avatarPreview.innerHTML = "<img src='" + opcionSeleccionada + "' alt='Avatar'>";
+        }
+    </script>
+    <script type="text/python" src="registro.py"></script>
+</body>
+</html>
+

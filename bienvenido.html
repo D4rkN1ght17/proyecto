@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido</h1>
+        <p>¡Bienvenido <strong>
+        <?php
+            echo htmlspecialchars($_POST['nombre']);
+        ?>
+        </strong>!</p>
+        <p>Avatar seleccionado:</p>
+        <img src="<?php echo htmlspecialchars($_POST['avatar']); ?>" alt="Avatar">
+    </div>
+</body>
+</html>
+
